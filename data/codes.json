@@ -1,0 +1,9 @@
+{
+  "_readme": "Ajoutez une entrée par client. La clé est le code que vous communiquez au client (majuscules recommandées). 'url' est le lien de téléchargement (Google Drive, WeTransfer, Dropbox...). 'label' s'affiche dans le message de confirmation. Supprimez cette entrée _readme n'est pas nécessaire, elle est ignorée par le site.",
+  "codes": {
+    "DEMO2026": {
+      "label": "Séance de démonstration",
+      "url": "https://example.com/remplacez-par-votre-lien-de-telechargement"
+    }
+  }
+}

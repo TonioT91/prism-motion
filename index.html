@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prism Motion — Photographe sportif freelance</title>
+<meta name="description" content="Prism Motion, photographe sportif freelance. Matchs, entraînements, portraits d'athlètes et événements sportifs." />
+<link rel="stylesheet" href="css/style.css?v=4" />
+</head>
+<body>
+
+<div id="scroll-sentinel" aria-hidden="true"></div>
+
+<!-- =========================================================
+     Nav
+     ========================================================= -->
+<header class="nav" id="site-nav">
+  <div class="wrap">
+    <a href="#top" class="nav-logo">
+      <span class="nav-logo-mark">PM</span>
+      <span class="nav-logo-text">PRISM MOTION</span>
+    </a>
+
+    <nav aria-label="Navigation principale">
+      <ul class="nav-links">
+        <li><a href="index.html#projets">Travail</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#apropos">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="espace-client.html">Espace client</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="wrap mobile-menu-head">
+    <span class="nav-logo">
+      <span class="nav-logo-mark">PM</span>
+      <span class="nav-logo-text">PRISM MOTION</span>
+    </span>
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fermer le menu">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+    </button>
+  </div>
+  <div class="wrap">
+    <ul class="mobile-menu-links">
+      <li><a href="index.html#projets">Travail</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#apropos">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="espace-client.html">Espace client</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary btn-block">Discutons</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- =========================================================
+       Hero — image centrale avec effet de parallaxe au scroll
+       ========================================================= -->
+  <section class="hero-parallax" id="hero-parallax">
+    <div class="hero-parallax-pin" id="hero-pin">
+
+      <div class="hero-parallax-side hero-parallax-side--a" id="hero-side-a">
+        <img src="https://picsum.photos/seed/prism-motion-hero-side-a/500/650" alt="" loading="lazy" />
+      </div>
+      <div class="hero-parallax-side hero-parallax-side--b" id="hero-side-b">
+        <img src="https://picsum.photos/seed/prism-motion-hero-side-b/500/650" alt="" loading="lazy" />
+      </div>
+
+      <div class="hero-parallax-center" id="hero-center">
+        <img
+          src="https://picsum.photos/seed/prism-motion-hero-sprint/1920/1200"
+          alt="Athlète en pleine action, image de démonstration à remplacer par une vraie photo Prism Motion"
+          width="1920" height="1200"
+          fetchpriority="high"
+        />
+      </div>
+
+      <div class="hero-parallax-scrim"></div>
+
+      <div class="hero-parallax-content" id="hero-content-reveal">
+        <div class="wrap">
+          <h1 class="hero-title">Le sport, figé à <em>pleine vitesse</em>.</h1>
+          <p class="hero-sub">Photographe freelance basé en France. Matchs, entraînements et portraits d'athlètes, pour clubs, marques et sportifs indépendants.</p>
+          <div class="hero-actions">
+            <a href="#projets" class="btn btn-primary">Voir les projets</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-parallax-hint" id="hero-hint">
+        <span>Faites défiler</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5l0 14" /><path d="M18 13l-6 6" /><path d="M6 13l6 6" /></svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Projets en vedette — carrousel contenu (vidéo)
+       ========================================================= -->
+  <section class="section" id="projets">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 class="section-title">Projets en vedette.</h2>
+        <p class="section-body">Une sélection de séries récentes, en images et en mouvement.</p>
+      </div>
+
+      <div class="project-carousel reveal" id="project-carousel">
+        <div class="hero-slides" id="project-slides">
+
+          <div class="hero-slide is-active" data-index="0">
+            <div class="hero-slide-media">
+              <video muted loop playsinline preload="metadata" poster="https://picsum.photos/seed/prism-motion-football-video/1600/900">
+                <!-- Déposez le fichier vidéo réel dans assets/video/ et ajoutez-le ici, voir README -->
+              </video>
+            </div>
+            <div class="hero-slide-scrim"></div>
+            <span class="project-video-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4" /><path d="M3 8a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -8" /></svg>
+            </span>
+            <div class="project-carousel-content">
+              <span class="project-cat">Football</span>
+              <h3 class="project-carousel-title">Derby régional</h3>
+              <p class="project-carousel-desc">Couverture complète d'un match de championnat amateur, de l'échauffement au coup de sifflet final.</p>
+              <a href="projets/derby-regional.html" class="btn btn-secondary">Voir le projet</a>
+            </div>
+          </div>
+
+          <div class="hero-slide" data-index="1">
+            <div class="hero-slide-media">
+              <video muted loop playsinline preload="metadata" poster="https://picsum.photos/seed/prism-motion-trail-video/1600/900">
+                <!-- Déposez le fichier vidéo réel dans assets/video/ et ajoutez-le ici, voir README -->
+              </video>
+            </div>
+            <div class="hero-slide-scrim"></div>
+            <span class="project-video-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4" /><path d="M3 8a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -8" /></svg>
+            </span>
+            <div class="project-carousel-content">
+              <span class="project-cat">Trail</span>
+              <h3 class="project-carousel-title">Trail des Crêtes</h3>
+              <p class="project-carousel-desc">Suivi photo et vidéo sur trois points du parcours, du départ à l'arrivée.</p>
+              <a href="projets/trail-des-cretes.html" class="btn btn-secondary">Voir le projet</a>
+            </div>
+          </div>
+
+          <div class="hero-slide" data-index="2">
+            <div class="hero-slide-media">
+              <video muted loop playsinline preload="metadata" poster="https://picsum.photos/seed/prism-motion-portrait-video/1600/900">
+                <!-- Déposez le fichier vidéo réel dans assets/video/ et ajoutez-le ici, voir README -->
+              </video>
+            </div>
+            <div class="hero-slide-scrim"></div>
+            <span class="project-video-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4" /><path d="M3 8a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -8" /></svg>
+            </span>
+            <div class="project-carousel-content">
+              <span class="project-cat">Portraits</span>
+              <h3 class="project-carousel-title">Tournoi inter-clubs</h3>
+              <p class="project-carousel-desc">Portraits d'équipe et action en salle sur une journée complète de basketball.</p>
+              <a href="projets/tournoi-inter-clubs.html" class="btn btn-secondary">Voir le projet</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hero-carousel-dots" id="project-dots">
+          <button class="hero-dot is-active" data-index="0" aria-label="Projet 1 : Derby régional"></button>
+          <button class="hero-dot" data-index="1" aria-label="Projet 2 : Trail des Crêtes"></button>
+          <button class="hero-dot" data-index="2" aria-label="Projet 3 : Tournoi inter-clubs"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Services — bento
+       ========================================================= -->
+  <section class="section section-alt" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 class="section-title">Ce que je couvre.</h2>
+      </div>
+
+      <div class="bento reveal-group">
+        <div class="bento-item reveal">
+          <img src="https://picsum.photos/seed/prism-motion-club/900/650" alt="Match de club, image de démonstration" width="900" height="650" loading="lazy" />
+          <div class="bento-scrim"></div>
+          <div class="bento-text">
+            <h3 class="bento-title">Clubs & compétitions</h3>
+            <p class="bento-desc">Couverture complète de matchs et de tournois.</p>
+          </div>
+        </div>
+
+        <div class="bento-item reveal">
+          <img src="https://picsum.photos/seed/prism-motion-portrait/700/650" alt="Portrait d'athlète, image de démonstration" width="700" height="650" loading="lazy" />
+          <div class="bento-scrim"></div>
+          <div class="bento-text">
+            <h3 class="bento-title">Portraits d'athlètes</h3>
+            <p class="bento-desc">En studio ou sur le terrain.</p>
+          </div>
+        </div>
+
+        <div class="bento-item reveal">
+          <img src="https://picsum.photos/seed/prism-motion-evenement/700/650" alt="Événement sportif, image de démonstration" width="700" height="650" loading="lazy" />
+          <div class="bento-scrim"></div>
+          <div class="bento-text">
+            <h3 class="bento-title">Événements & trails</h3>
+            <p class="bento-desc">Courses et événements sportifs grand public.</p>
+          </div>
+        </div>
+
+        <div class="bento-item reveal">
+          <img src="https://picsum.photos/seed/prism-motion-marque/900/650" alt="Contenu de marque sportive, image de démonstration" width="900" height="650" loading="lazy" />
+          <div class="bento-scrim"></div>
+          <div class="bento-text">
+            <h3 class="bento-title">Marques & sponsors</h3>
+            <p class="bento-desc">Contenu photo pour campagnes et réseaux sociaux.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       About
+       ========================================================= -->
+  <section class="section" id="apropos">
+    <div class="wrap about-grid">
+      <div class="about-media reveal">
+        <img src="https://picsum.photos/seed/prism-motion-photographe/700/875" alt="Photographe sur le terrain avec son appareil, image de démonstration" width="700" height="875" loading="lazy" />
+      </div>
+      <div class="about-text reveal">
+        <h2 class="section-title">À propos de Prism Motion.</h2>
+        <p>Prism Motion est un studio photo freelance spécialisé dans le sport. Je couvre des matchs, des courses et des séances portrait, avec un regard centré sur le mouvement et l'énergie du moment.</p>
+        <p>Studio tout juste lancé, avec une approche directe : disponibilité rapide, livraison soignée, et un accès simple à vos photos après chaque séance.</p>
+        <a href="contact.html" class="btn btn-secondary">Discutons de votre projet</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     Footer
+     ========================================================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">PRISM MOTION</div>
+        <p class="footer-tagline">Photographie sportive freelance. Matchs, courses et portraits d'athlètes.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Navigation</div>
+          <ul>
+            <li><a href="index.html#projets">Travail</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#apropos">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="espace-client.html">Espace client</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <ul>
+            <li><a href="mailto:contact@prismmotion.fr">contact@prismmotion.fr</a></li>
+            <li><a href="tel:+33600000000">06 00 00 00 00</a></li>
+            <li><a href="https://instagram.com/prismmotion" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Prism Motion. Tous droits réservés.</span>
+      <span>France</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://instagram.com/prismmotion" target="_blank" rel="noopener" class="instagram-fab" aria-label="Suivre Prism Motion sur Instagram">
+  <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-8a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-4 5a4 4 0 0 0 -3.995 3.8l-.005 .2a4 4 0 1 0 4 -4m4.5 -1.5a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1" /></svg>
+</a>
+
+<script src="js/main.js?v=4"></script>
+</body>
+</html>

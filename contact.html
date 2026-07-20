@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — Prism Motion</title>
+<meta name="description" content="Contactez Prism Motion pour un match, un événement, un portrait ou une campagne de marque." />
+<link rel="stylesheet" href="css/style.css?v=4" />
+</head>
+<body>
+
+<!-- =========================================================
+     Nav (solid, page intérieure)
+     ========================================================= -->
+<header class="nav is-scrolled" id="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-mark">PM</span>
+      <span class="nav-logo-text">PRISM MOTION</span>
+    </a>
+
+    <nav aria-label="Navigation principale">
+      <ul class="nav-links">
+        <li><a href="index.html#projets">Travail</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#apropos">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="espace-client.html">Espace client</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="wrap mobile-menu-head">
+    <span class="nav-logo">
+      <span class="nav-logo-mark">PM</span>
+      <span class="nav-logo-text">PRISM MOTION</span>
+    </span>
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fermer le menu">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+    </button>
+  </div>
+  <div class="wrap">
+    <ul class="mobile-menu-links">
+      <li><a href="index.html#projets">Travail</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#apropos">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="espace-client.html">Espace client</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary btn-block">Discutons</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- =========================================================
+       Bandeau d'intro
+       ========================================================= -->
+  <section class="page-intro">
+    <div class="wrap">
+      <h1 class="page-intro-title">Discutons de votre projet.</h1>
+      <p class="page-intro-sub">Match, événement, portrait ou campagne de marque : décrivez votre besoin, je réponds rapidement.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Formulaire
+       ========================================================= -->
+  <section class="section">
+    <div class="wrap">
+      <div class="contact-grid">
+        <form id="contact-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" novalidate>
+          <div class="field-row">
+            <div class="field" data-field="name">
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom" required />
+              <span class="field-error">Merci d'indiquer votre nom.</span>
+            </div>
+            <div class="field" data-field="email">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="vous@exemple.fr" required />
+              <span class="field-error">Merci d'indiquer une adresse email valide.</span>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field" data-field="phone">
+              <label for="phone">Téléphone <span class="field-hint">(optionnel)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00" />
+            </div>
+            <div class="field" data-field="project-type">
+              <label for="project-type">Type de projet</label>
+              <select id="project-type" name="project-type" required>
+                <option value="" disabled selected>Sélectionnez</option>
+                <option value="Club ou compétition">Club ou compétition</option>
+                <option value="Portrait d'athlète">Portrait d'athlète</option>
+                <option value="Événement ou trail">Événement ou trail</option>
+                <option value="Marque ou sponsor">Marque ou sponsor</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field" data-field="message">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Décrivez votre projet : date, lieu, besoin." required></textarea>
+            <span class="field-error">Merci de décrire votre projet.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="contact-submit">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg>
+            Envoyer le message
+          </button>
+
+          <p class="form-status" id="contact-status"></p>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-info-card">
+            <h3 class="bento-title">Coordonnées directes</h3>
+            <ul class="contact-info-list">
+              <li>
+                <a href="mailto:contact@prismmotion.fr">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg>
+                  contact@prismmotion.fr
+                </a>
+              </li>
+              <li>
+                <a href="tel:+33600000000">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /><path d="M15 7a2 2 0 0 1 2 2" /><path d="M15 3a6 6 0 0 1 6 6" /></svg>
+                  06 00 00 00 00
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/prismmotion" target="_blank" rel="noopener">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4l0 -8" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg>
+                  @prismmotion
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     Footer
+     ========================================================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">PRISM MOTION</div>
+        <p class="footer-tagline">Photographie sportive freelance. Matchs, courses et portraits d'athlètes.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Navigation</div>
+          <ul>
+            <li><a href="index.html#projets">Travail</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#apropos">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="espace-client.html">Espace client</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <ul>
+            <li><a href="mailto:contact@prismmotion.fr">contact@prismmotion.fr</a></li>
+            <li><a href="tel:+33600000000">06 00 00 00 00</a></li>
+            <li><a href="https://instagram.com/prismmotion" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Prism Motion. Tous droits réservés.</span>
+      <span>France</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://instagram.com/prismmotion" target="_blank" rel="noopener" class="instagram-fab" aria-label="Suivre Prism Motion sur Instagram">
+  <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-8a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-4 5a4 4 0 0 0 -3.995 3.8l-.005 .2a4 4 0 1 0 4 -4m4.5 -1.5a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1" /></svg>
+</a>
+
+<script src="js/main.js?v=4"></script>
+</body>
+</html>

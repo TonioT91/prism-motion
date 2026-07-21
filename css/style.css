@@ -750,6 +750,17 @@ button {
   color: var(--on-photo-text);
 }
 
+.hero-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--on-photo-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 14px;
+}
+
 .hero-title {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 700;
@@ -1471,6 +1482,11 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.about-text .project-cat {
+  display: block;
+  margin-bottom: 12px;
 }
 
 .about-text .section-title {

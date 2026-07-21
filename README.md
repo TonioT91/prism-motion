@@ -21,9 +21,9 @@ Les vraies photos du photographe sont en place dans `assets/photos/` (hero, 6 pr
 
 ### 2. Mettre à jour vos coordonnées
 
-L'email et le téléphone de démonstration apparaissent dans le pied de page de chacune des 9 pages, plus dans la carte "Coordonnées directes" de `contact.html`. Cherchez et remplacez dans tous les fichiers `.html` (racine et `projets/`) :
-- `contact@prismmotion.fr` → votre email pro réel (ou un alias qui redirige vers `antoine.tarrago@orange.fr`)
-- `+33600000000` / `06 00 00 00 00` → votre numéro
+L'email pro (`contact-tonio@prism-motion.com`) est déjà à jour dans le pied de page de chaque page et dans la carte "Coordonnées directes" de `contact.html`. Pensez à configurer une redirection de cette adresse vers `antoine.tarrago@orange.fr` dans votre panel d'hébergement.
+
+Il reste à mettre à jour le téléphone de démonstration `+33600000000` / `06 00 00 00 00` → votre numéro, si vous souhaitez l'afficher.
 
 Le lien Instagram (`https://www.instagram.com/trrg.photo`) est déjà à jour partout : pied de page, bouton flottant, et aperçus "story" de chaque page projet.
 

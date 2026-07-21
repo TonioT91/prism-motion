@@ -322,11 +322,22 @@ button {
 }
 
 .nav .wrap {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 20px;
+}
+
+/* Wordmark sits dead-center in the header, independent of how much
+   room the logo mark or the nav links take up on either side. */
+.nav-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .nav .wrap > nav {
@@ -950,6 +961,33 @@ button {
   color: var(--on-photo-faint);
 }
 
+/* Footer folded into the photo background too, when it sits inside
+   .photo-page (Contact, Espace client): glass divider instead of a
+   solid line, light-on-photo text throughout. */
+.photo-page .footer {
+  border-top-color: var(--on-photo-line);
+}
+
+.photo-page .footer-logo,
+.photo-page .footer-col a {
+  color: var(--on-photo-text);
+}
+
+.photo-page .footer-tagline,
+.photo-page .footer-col-title,
+.photo-page .footer-bottom {
+  color: var(--on-photo-muted);
+}
+
+.photo-page .footer-col a:hover {
+  color: var(--on-photo-text);
+  opacity: 0.8;
+}
+
+.photo-page .footer-bottom {
+  border-top-color: var(--on-photo-line);
+}
+
 .project-intro .project-cat {
   display: inline-block;
   margin-bottom: 14px;
@@ -1152,63 +1190,6 @@ button {
   color: var(--on-photo-faint);
 }
 
-.project-story {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.project-story-frame {
-  width: min(80vw, 300px);
-  aspect-ratio: 9 / 16;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid var(--line-strong);
-  position: relative;
-  background: var(--bg-elevated-2);
-}
-
-.project-story-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
-}
-
-.project-story-head {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  right: 14px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.project-story-avatar {
-  width: 26px;
-  height: 26px;
-  border-radius: var(--radius-pill);
-  background: var(--on-photo-text);
-  flex-shrink: 0;
-}
-
-.project-story-handle {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--on-photo-text);
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-}
-
-.project-story-caption {
-  margin-top: 18px;
-  font-size: 14px;
-  color: var(--text-muted);
-  max-width: 40ch;
-}
-
 .project-poster {
   position: relative;
   width: min(80vw, 420px);
@@ -1299,43 +1280,6 @@ button {
   font-size: clamp(1.3rem, 3vw, 1.8rem);
   font-weight: 700;
   letter-spacing: -0.01em;
-}
-
-/* =========================================================
-   Clip-path gallery — photos masked into organic shapes
-   ========================================================= */
-
-.clip-strip {
-  padding-block: 32px;
-}
-
-@media (min-width: 1024px) {
-  .clip-strip { padding-block: 48px; }
-}
-
-.clip-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.clip-gallery-item {
-  width: 130px;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .clip-gallery-item {
-    width: 160px;
-  }
-}
-
-.clip-gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* =========================================================

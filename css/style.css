@@ -326,36 +326,11 @@ button {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 20px;
 }
 
-/* Wordmark sits dead-center in the header, independent of how much
-   room the logo mark or the nav links take up on either side. */
-.nav-logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.nav .wrap > nav {
-  display: flex;
-  flex: 1;
-  min-width: 0;
-  justify-content: flex-end;
-}
-
-.nav-logo {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-  gap: 10px;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
+/* Mark sits on the left, in normal flow. */
 .nav-logo-mark {
   display: inline-flex;
   align-items: center;
@@ -379,12 +354,28 @@ button {
   filter: invert(1);
 }
 
+/* Wordmark sits dead-center in the header, independent of how much
+   room the logo mark or the nav links take up on either side. */
 .nav-logo-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
   font-family: var(--font-logo);
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 0.01em;
   color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav .wrap > nav {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  justify-content: flex-end;
 }
 
 /* Always visible, on every viewport — no hamburger, no hidden
@@ -838,6 +829,7 @@ button {
   letter-spacing: -0.02em;
   line-height: 1.1;
   max-width: 640px;
+  text-decoration: none;
 }
 
 .page-intro-sub {

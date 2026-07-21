@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prism-motion.com/sitemap.xml

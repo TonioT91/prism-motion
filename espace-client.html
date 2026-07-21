@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Espace client — Prism Motion</title>
 <meta name="description" content="Récupérez vos photos Prism Motion à l'aide du code reçu après votre séance." />
-<link rel="stylesheet" href="css/style.css?v=4" />
+<link rel="stylesheet" href="css/style.css?v=10" />
 </head>
 <body>
 
 <!-- =========================================================
-     Nav (solid, page intérieure)
+     Nav (dynamique : clair sur la photo, plein une fois passé)
      ========================================================= -->
-<header class="nav is-scrolled" id="site-nav">
+<header class="nav" id="site-nav">
   <div class="wrap">
     <a href="index.html" class="nav-logo">
-      <span class="nav-logo-mark">PM</span>
+      <span class="nav-logo-mark"><img src="assets/logo/prism-motion-mark.png" alt="" /></span>
       <span class="nav-logo-text">PRISM MOTION</span>
     </a>
 
@@ -28,72 +28,55 @@
         <li><a href="espace-client.html">Espace client</a></li>
       </ul>
     </nav>
-
-    <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
-    </button>
   </div>
 </header>
 
-<div class="mobile-menu" id="mobile-menu">
-  <div class="wrap mobile-menu-head">
-    <span class="nav-logo">
-      <span class="nav-logo-mark">PM</span>
-      <span class="nav-logo-text">PRISM MOTION</span>
-    </span>
-    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fermer le menu">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
-    </button>
-  </div>
-  <div class="wrap">
-    <ul class="mobile-menu-links">
-      <li><a href="index.html#projets">Travail</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#apropos">À propos</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="espace-client.html">Espace client</a></li>
-    </ul>
-    <a href="contact.html" class="btn btn-primary btn-block">Discutons</a>
-  </div>
-</div>
 
 <main>
 
-  <!-- =========================================================
-       Bandeau d'intro
-       ========================================================= -->
-  <section class="page-intro">
-    <div class="wrap">
-      <h1 class="page-intro-title">Récupérez vos photos.</h1>
-      <p class="page-intro-sub">Vous avez reçu un code après votre séance. Entrez-le ci-dessous pour accéder au lien de téléchargement.</p>
+  <div class="photo-page">
+    <div id="scroll-sentinel" class="photo-page-sentinel" aria-hidden="true"></div>
+    <div class="photo-page-bg">
+      <img src="assets/photos/kitesurf/kite-01.jpg" alt="Kitesurfeur en plein saut au-dessus des vagues" loading="lazy" />
     </div>
-  </section>
 
-  <!-- =========================================================
-       Formulaire de code
-       ========================================================= -->
-  <section class="section">
-    <div class="wrap">
-      <div class="client-card">
-        <form class="client-form" id="client-form" novalidate>
-          <input
-            type="text"
-            class="client-input"
-            id="client-code"
-            name="code"
-            placeholder="Votre code, ex. TRAIL2026"
-            autocomplete="off"
-            required
-          />
-          <button type="submit" class="btn btn-primary btn-block">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></svg>
-            Accéder à mes photos
-          </button>
-          <p class="client-status" id="client-status"></p>
-        </form>
+    <!-- =========================================================
+         Bandeau d'intro
+         ========================================================= -->
+    <section class="page-intro">
+      <div class="wrap">
+        <h1 class="page-intro-title">Récupérez vos photos.</h1>
+        <p class="page-intro-sub">Vous avez reçu un code après votre séance. Entrez-le ci-dessous pour accéder au lien de téléchargement.</p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- =========================================================
+         Formulaire de code
+         ========================================================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="client-card">
+          <form class="client-form" id="client-form" novalidate>
+            <input
+              type="text"
+              class="client-input"
+              id="client-code"
+              name="code"
+              placeholder="Votre code, ex. TRAIL2026"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" class="btn btn-primary btn-block">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></svg>
+              Accéder à mes photos
+            </button>
+            <p class="client-status" id="client-status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </div>
 
 </main>
 
@@ -105,7 +88,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo">PRISM MOTION</div>
-        <p class="footer-tagline">Photographie sportive freelance. Matchs, courses et portraits d'athlètes.</p>
+        <p class="footer-tagline">Photographe sportif indépendant. Athlètes, marques et créateurs de contenu, en Savoie, Haute-Savoie et Isère.</p>
       </div>
 
       <div class="footer-cols">
@@ -123,8 +106,7 @@
           <div class="footer-col-title">Contact</div>
           <ul>
             <li><a href="mailto:contact@prismmotion.fr">contact@prismmotion.fr</a></li>
-            <li><a href="tel:+33600000000">06 00 00 00 00</a></li>
-            <li><a href="https://instagram.com/prismmotion" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.instagram.com/trrg.photo" target="_blank" rel="noopener">Instagram</a></li>
           </ul>
         </div>
       </div>
@@ -137,10 +119,10 @@
   </div>
 </footer>
 
-<a href="https://instagram.com/prismmotion" target="_blank" rel="noopener" class="instagram-fab" aria-label="Suivre Prism Motion sur Instagram">
+<a href="https://www.instagram.com/trrg.photo" target="_blank" rel="noopener" class="instagram-fab" aria-label="Suivre Prism Motion sur Instagram">
   <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-8a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-4 5a4 4 0 0 0 -3.995 3.8l-.005 .2a4 4 0 1 0 4 -4m4.5 -1.5a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1" /></svg>
 </a>
 
-<script src="js/main.js?v=4"></script>
+<script src="js/main.js?v=10"></script>
 </body>
 </html>

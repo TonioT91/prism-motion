@@ -188,33 +188,6 @@
   }
 
   /* ---------------------------------------------------------
-     Mobile menu
-     --------------------------------------------------------- */
-  const menuToggle = document.getElementById("nav-toggle");
-  const menuClose = document.getElementById("mobile-menu-close");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  function openMenu() {
-    mobileMenu.classList.add("is-open");
-    menuToggle.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeMenu() {
-    mobileMenu.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
-  }
-
-  if (menuToggle && mobileMenu && menuClose) {
-    menuToggle.addEventListener("click", openMenu);
-    menuClose.addEventListener("click", closeMenu);
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
-  }
-
-  /* ---------------------------------------------------------
      Reveal-on-scroll
      --------------------------------------------------------- */
   const revealEls = document.querySelectorAll(".reveal");

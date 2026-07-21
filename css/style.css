@@ -131,6 +131,23 @@
   pointer-events: none;
 }
 
+/* Covers the full .photo-page block (as its first child): the nav
+   stays in its light-on-photo state for as long as any part of the
+   photo backdrop is still in the viewport, and only flips solid once
+   the whole block has scrolled past. A point sentinel would start
+   "not intersecting" before the user ever scrolls to it, since it
+   sits below the fold on load — flipping the nav solid immediately,
+   which is wrong. */
+#scroll-sentinel.photo-page-sentinel {
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
 html {
   scroll-behavior: smooth;
   color-scheme: light;
@@ -287,8 +304,8 @@ button {
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  background: linear-gradient(rgba(10,10,10,0.24), rgba(10,10,10,0));
-  backdrop-filter: blur(5px);
+  background: linear-gradient(rgba(10,10,10,0.1), rgba(10,10,10,0));
+  backdrop-filter: blur(3px);
   border-bottom: 1px solid transparent;
   color: var(--on-photo-text);
   transition: background var(--dur-fast) var(--ease), backdrop-filter var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
@@ -298,8 +315,8 @@ button {
    interior page, which sets this class statically), the nav reads
    as a normal light-theme bar instead of light-on-photo. */
 .nav.is-scrolled {
-  background: rgba(250, 250, 249, 0.86);
-  backdrop-filter: blur(12px);
+  background: rgba(250, 250, 249, 0.62);
+  backdrop-filter: blur(10px);
   border-bottom-color: var(--line);
   color: var(--text);
 }
@@ -309,57 +326,91 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
+}
+
+.nav .wrap > nav {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  justify-content: flex-end;
 }
 
 .nav-logo {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 10px;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .nav-logo-mark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  height: 46px;
   flex-shrink: 0;
-  border-radius: 8px;
-  border: 1px dashed currentColor;
-  opacity: 0.85;
-  background: rgba(128, 128, 128, 0.14);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: inherit;
+}
+
+.nav-logo-mark img {
+  display: block;
+  height: 100%;
+  width: auto;
+  filter: none;
+  transition: filter var(--dur-fast) var(--ease);
+}
+
+/* Header starts light-on-photo (over the hero image): the mark is
+   black ink on transparent, so invert it to read white until the
+   nav goes solid. Interior pages set .is-scrolled statically. */
+.nav:not(.is-scrolled) .nav-logo-mark img {
+  filter: invert(1);
 }
 
 .nav-logo-text {
-  font-family: var(--font-mono);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-family: var(--font-logo);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   color: inherit;
 }
 
+/* Always visible, on every viewport — no hamburger, no hidden
+   overlay. On narrow screens the list scrolls horizontally
+   (momentum scroll, no visible scrollbar) instead of collapsing,
+   so every link stays one tap away. */
 .nav-links {
-  display: none;
+  display: flex;
   align-items: center;
-  gap: 32px;
+  flex: 1;
+  min-width: 0;
+  gap: 18px;
   list-style: none;
   padding: 0;
+  margin: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 400;
   color: inherit;
+  mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 16px), transparent);
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links li {
+  flex-shrink: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   opacity: 0.72;
+  white-space: nowrap;
   transition: opacity var(--dur-fast) var(--ease);
 }
 
@@ -367,86 +418,16 @@ button {
   opacity: 1;
 }
 
-.nav-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-pill);
-  background: rgba(128, 128, 128, 0.14);
-  border: 1px solid currentColor;
-  opacity: 0.85;
-  color: inherit;
-  backdrop-filter: blur(6px);
+@media (min-width: 640px) {
+  .nav-links {
+    gap: 22px;
+    font-size: 11px;
+    mask-image: none;
+  }
 }
-
-.nav-toggle .icon { width: 20px; height: 20px; }
 
 @media (min-width: 1024px) {
-  .nav-links { display: flex; }
-  .nav-toggle,
-  .mobile-menu { display: none; }
-}
-
-/* overlay menu (below lg only) */
-
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  transform: translateY(-100%);
-  transition: transform var(--dur-med) var(--ease);
-}
-
-.mobile-menu.is-open {
-  transform: translateY(0);
-}
-
-.mobile-menu-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: var(--nav-h);
-}
-
-.mobile-menu-close {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-pill);
-  background: var(--bg-elevated);
-  border: 1px solid var(--line);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobile-menu-links {
-  list-style: none;
-  padding: 0;
-  margin: 24px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  max-width: 480px;
-}
-
-.mobile-menu-links a {
-  display: block;
-  padding: 16px 4px;
-  font-size: 28px;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1px solid var(--line);
-}
-
-.mobile-menu .btn {
-  margin-top: 24px;
-  align-self: flex-start;
+  .nav-links { flex: 0 0 auto; gap: 26px; font-size: 12px; }
 }
 
 /* =========================================================
@@ -484,7 +465,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
 }
 
 .hero-parallax-side {
@@ -503,7 +483,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
 }
 
 .hero-parallax-side--a {
@@ -619,7 +598,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
 }
 
 .hero-slide-scrim {
@@ -808,7 +786,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
 }
 
 .project-video-badge {
@@ -860,6 +837,119 @@ button {
   line-height: 1.55;
 }
 
+/* =========================================================
+   Full-page photo background (Contact, Espace client)
+   Wraps the intro + form so the photo reads as the page's
+   backdrop, with a scrim for contrast and glass panels for the
+   form/card content sitting on top of it.
+   ========================================================= */
+
+.photo-page {
+  position: relative;
+  isolation: isolate;
+}
+
+.photo-page-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.photo-page-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-page-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,8,8,0.45) 0%, rgba(8,8,8,0.55) 45%, rgba(8,8,8,0.85) 100%);
+}
+
+.photo-page .page-intro {
+  background: none;
+  border-bottom: none;
+}
+
+.photo-page .page-intro-title {
+  color: var(--on-photo-text);
+}
+
+.photo-page .page-intro-sub {
+  color: var(--on-photo-muted);
+}
+
+.photo-page .field label {
+  color: var(--on-photo-text);
+}
+
+.photo-page .field-hint {
+  color: var(--on-photo-faint);
+}
+
+.photo-page .field input,
+.photo-page .field select,
+.photo-page .field textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--on-photo-line);
+  color: var(--on-photo-text);
+  backdrop-filter: blur(10px);
+}
+
+.photo-page .field input::placeholder,
+.photo-page .field textarea::placeholder {
+  color: var(--on-photo-faint);
+}
+
+.photo-page .field input:focus,
+.photo-page .field select:focus,
+.photo-page .field textarea:focus {
+  border-color: var(--on-photo-text);
+}
+
+.photo-page .field select option {
+  color: var(--text);
+}
+
+.photo-page .contact-info-card,
+.photo-page .client-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--on-photo-line);
+  backdrop-filter: blur(16px);
+}
+
+.photo-page .contact-info-card .bento-title,
+.photo-page .client-card .section-title {
+  color: var(--on-photo-text);
+}
+
+.photo-page .client-card .section-body {
+  color: var(--on-photo-muted);
+}
+
+.photo-page .contact-info-list a {
+  color: var(--on-photo-text);
+}
+
+.photo-page .contact-info-list .icon {
+  color: var(--on-photo-text);
+}
+
+.photo-page .client-input {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--on-photo-line);
+  color: var(--on-photo-text);
+  backdrop-filter: blur(10px);
+}
+
+.photo-page .client-input::placeholder {
+  color: var(--on-photo-faint);
+}
+
 .project-intro .project-cat {
   display: inline-block;
   margin-bottom: 14px;
@@ -903,12 +993,18 @@ button {
   border: 1px solid var(--line);
 }
 
+.project-photo {
+  background: var(--bg-elevated);
+  text-align: center;
+}
+
 .project-photo img {
   width: 100%;
   height: auto;
+  max-height: 80vh;
   display: block;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  margin-inline: auto;
+  object-fit: contain;
 }
 
 .project-grid {
@@ -921,17 +1017,28 @@ button {
   .project-grid { grid-template-columns: 1fr 1fr; }
 }
 
+/* Opening gallery — 3 photos right under the intro, so a project
+   never opens on a single sparse image. */
+.project-opening {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .project-opening { grid-template-columns: repeat(3, 1fr); }
+}
+
 .project-grid-item {
   border-radius: var(--radius-card);
   overflow: hidden;
   border: 1px solid var(--line);
+  background: var(--bg-elevated);
 }
 
 .project-grid-item img {
   width: 100%;
-  height: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
@@ -976,20 +1083,23 @@ button {
 
 .circular-gallery-item {
   position: absolute;
-  width: min(30vw, 340px);
+  width: min(38vw, 420px);
   aspect-ratio: 3 / 4;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--on-photo-line);
   box-shadow: 0 30px 60px rgba(0,0,0,0.45);
   will-change: transform, opacity;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .circular-gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
+  object-fit: contain;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1011,12 +1121,12 @@ button {
 }
 
 .project-film {
-  max-width: 640px;
+  max-width: 760px;
   margin-inline: auto;
   background: #0c0c0c;
   border-radius: var(--radius-card);
   border: 1px solid var(--line-strong);
-  padding: 28px 28px 20px;
+  padding: 10px 10px 12px;
 }
 
 .project-film-frame {
@@ -1026,10 +1136,8 @@ button {
 
 .project-film-frame img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;
   display: block;
-  filter: grayscale(0.15) contrast(1.05);
 }
 
 .project-film-meta {
@@ -1197,31 +1305,37 @@ button {
    Clip-path gallery — photos masked into organic shapes
    ========================================================= */
 
-.clip-gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  margin-top: 40px;
+.clip-strip {
+  padding-block: 32px;
 }
 
-@media (min-width: 768px) {
-  .clip-gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: center;
-  }
+@media (min-width: 1024px) {
+  .clip-strip { padding-block: 48px; }
+}
+
+.clip-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .clip-gallery-item {
+  width: 130px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .clip-gallery-item {
+    width: 160px;
+  }
 }
 
 .clip-gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
 }
 
 /* =========================================================
@@ -1308,16 +1422,22 @@ button {
 
 @media (min-width: 1024px) {
   .about-grid {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 64px;
+    grid-template-columns: 0.5fr 1.5fr;
+    gap: 48px;
   }
 }
 
 .about-media {
+  max-width: 190px;
+  justify-self: start;
   border-radius: var(--radius-card);
   overflow: hidden;
   aspect-ratio: 4 / 5;
   border: 1px solid var(--line);
+}
+
+@media (min-width: 1024px) {
+  .about-media { max-width: 230px; }
 }
 
 .about-media img {
@@ -1339,6 +1459,76 @@ button {
   font-size: 16px;
   line-height: 1.65;
   max-width: 52ch;
+}
+
+/* =========================================================
+   Highlights — bande défilante hors-projets (rando, feu, plongée)
+   ========================================================= */
+
+.highlights-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 8px;
+  margin: 0 -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  scrollbar-width: none;
+}
+
+.highlights-track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .highlights-track {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.highlights-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 220px;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  scroll-snap-align: start;
+  border: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+  .highlights-item {
+    width: 260px;
+  }
+}
+
+.highlights-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlights-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(10,10,10,0.65) 0%, rgba(10,10,10,0) 45%);
+}
+
+.highlights-tag {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--on-photo-text);
 }
 
 /* =========================================================
@@ -1636,9 +1826,10 @@ button {
 }
 
 .footer-logo {
-  font-family: var(--font-mono);
-  font-size: 18px;
-  font-weight: 700;
+  font-family: var(--font-logo);
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 .footer-tagline {

@@ -20,6 +20,36 @@
   }
 
   /* ---------------------------------------------------------
+     Mobile nav: hamburger dropdown (below the 640px breakpoint
+     where the inline link list is hidden)
+     --------------------------------------------------------- */
+  const navToggle = document.getElementById("nav-toggle");
+  const mobileMenu = document.getElementById("nav-mobile-menu");
+
+  if (navToggle && nav && mobileMenu) {
+    function closeMobileMenu() {
+      nav.classList.remove("is-menu-open");
+      mobileMenu.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = !nav.classList.contains("is-menu-open");
+      nav.classList.toggle("is-menu-open", isOpen);
+      mobileMenu.classList.toggle("is-open", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMobileMenu();
+    });
+  }
+
+  /* ---------------------------------------------------------
      Full-bleed carousels (hero, projects)
      Auto-advance on a timer, pause on hover/focus, can be driven
      manually via dots. Reduced motion: no autoplay, dots still work.

@@ -432,6 +432,97 @@ button {
   .nav-links { flex: 0 0 auto; gap: 26px; font-size: 12px; }
 }
 
+/* Below 640px the inline link list and the centered wordmark
+   fight for the same space, so it collapses behind a hamburger
+   that opens a full-width dropdown instead. */
+@media (max-width: 639px) {
+  .nav .wrap > nav {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+.nav-toggle .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.nav-toggle-icon-close {
+  display: none;
+}
+
+.nav.is-menu-open .nav-toggle-icon-open {
+  display: none;
+}
+
+.nav.is-menu-open .nav-toggle-icon-close {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
+.nav-mobile-menu {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  z-index: 49;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 20px 12px;
+  background: rgba(250, 250, 249, 0.97);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+
+.nav-mobile-menu.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-mobile-menu a {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.nav-mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 640px) {
+  .nav-mobile-menu {
+    display: none;
+  }
+}
+
 /* =========================================================
    Hero — parallax reveal
    A tall (220vh) wrapper with a sticky pin. Scroll progress (see

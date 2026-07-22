@@ -5,6 +5,10 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://prism-motion.com/travail.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://prism-motion.com/contact.html</loc>
     <priority>0.8</priority>
   </url>
@@ -38,6 +42,10 @@
   </url>
   <url>
     <loc>https://prism-motion.com/projets/motos.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prism-motion.com/projets/tdf.html</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

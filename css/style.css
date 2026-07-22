@@ -1448,6 +1448,89 @@ button {
 }
 
 /* =========================================================
+   Travail — page listant tous les projets
+   ========================================================= */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .work-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+.work-card {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line);
+}
+
+.work-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.work-card:hover img {
+  transform: scale(1.05);
+}
+
+.work-card-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(10,10,12,0.92) 0%, rgba(10,10,12,0.35) 50%, rgba(10,10,12,0.05) 100%);
+}
+
+.work-card-text {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: var(--on-photo-text);
+}
+
+.work-card-cat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--on-photo-muted);
+  margin-bottom: 6px;
+}
+
+.work-card-title {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.work-card-desc {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--on-photo-muted);
+  max-width: 34ch;
+}
+
+/* =========================================================
    About
    ========================================================= */
 

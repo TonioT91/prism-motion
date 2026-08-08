@@ -667,6 +667,12 @@ button {
   border: 1px solid var(--line);
 }
 
+.projets-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 .hero-slide {
   position: absolute;
   inset: 0;

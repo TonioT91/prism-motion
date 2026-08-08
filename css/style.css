@@ -1377,6 +1377,65 @@ button {
 }
 
 /* =========================================================
+   Coverage — "Ce que je couvre", format liste à icônes
+   ========================================================= */
+
+.coverage-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+@media (min-width: 640px) {
+  .coverage-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .coverage-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+}
+
+.coverage-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.coverage-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.coverage-icon .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.coverage-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.coverage-desc {
+  margin-top: -6px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* =========================================================
    Services bento
    ========================================================= */
 

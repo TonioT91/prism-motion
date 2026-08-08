@@ -19,7 +19,7 @@
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" href="assets/favicon/favicon-32.png" sizes="32x32" />
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png" />
-<link rel="stylesheet" href="css/style.css?v=22" />
+<link rel="stylesheet" href="css/style.css?v=24" />
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -155,7 +155,7 @@
 
           <div class="hero-slide is-active" data-index="0">
             <div class="hero-slide-media">
-              <img src="assets/photos/cyclisme/cyclisme-01.jpg" alt="Peloton cycliste sur une route de campagne" loading="lazy" />
+              <img data-project="cyclisme" alt="Cyclisme, série Prism Motion" loading="lazy" />
             </div>
             <div class="hero-slide-scrim"></div>
             <div class="project-carousel-content">
@@ -168,7 +168,7 @@
 
           <div class="hero-slide" data-index="1">
             <div class="hero-slide-media">
-              <img src="assets/photos/tennis/tennis-01.jpg" alt="Joueur de tennis vu du ciel en pleine frappe" loading="lazy" />
+              <img data-project="tennis" alt="Tennis, série Prism Motion" loading="lazy" />
             </div>
             <div class="hero-slide-scrim"></div>
             <div class="project-carousel-content">
@@ -181,7 +181,7 @@
 
           <div class="hero-slide" data-index="2">
             <div class="hero-slide-media">
-              <img src="assets/photos/bloc/bloc-01.jpg" alt="Grimpeuse en pleine ascension sur un mur de bloc" loading="lazy" />
+              <img data-project="bloc" alt="Escalade de bloc, série Prism Motion" loading="lazy" />
             </div>
             <div class="hero-slide-scrim"></div>
             <div class="project-carousel-content">
@@ -194,7 +194,7 @@
 
           <div class="hero-slide" data-index="3">
             <div class="hero-slide-media">
-              <img src="assets/photos/kitesurf/kite-01.jpg" alt="Kitesurfeur en plein saut au-dessus des vagues" loading="lazy" />
+              <img data-project="kitesurf" alt="Kitesurf, série Prism Motion" loading="lazy" />
             </div>
             <div class="hero-slide-scrim"></div>
             <div class="project-carousel-content">
@@ -207,7 +207,7 @@
 
           <div class="hero-slide" data-index="4">
             <div class="hero-slide-media">
-              <img src="assets/photos/musculation/muscu-01.jpg" alt="Athlète en plein mouvement d'haltérophilie" loading="lazy" />
+              <img data-project="musculation" alt="Musculation, série Prism Motion" loading="lazy" />
             </div>
             <div class="hero-slide-scrim"></div>
             <div class="project-carousel-content">
@@ -220,7 +220,7 @@
 
           <div class="hero-slide" data-index="5">
             <div class="hero-slide-media">
-              <img src="assets/photos/hyrox/hyrox-01.jpg" alt="Athlète en plein saut devant le mur CrossFit pour tous" loading="lazy" />
+              <img data-project="hyrox" alt="Hyrox, série Prism Motion" loading="lazy" />
             </div>
             <div class="hero-slide-scrim"></div>
             <div class="project-carousel-content">
@@ -233,7 +233,7 @@
 
           <div class="hero-slide" data-index="6">
             <div class="hero-slide-media">
-              <img src="assets/photos/motos/moto-01.jpg" alt="Moto de collection Ducati 888 en atelier" loading="lazy" />
+              <img data-project="motos" alt="Motos de collection, série Prism Motion" loading="lazy" />
             </div>
             <div class="hero-slide-scrim"></div>
             <div class="project-carousel-content">
@@ -246,7 +246,7 @@
 
           <div class="hero-slide" data-index="7">
             <div class="hero-slide-media">
-              <img src="assets/photos/tdf/tdf-01.jpg" alt="Ambiance de la caravane du Tour de France" loading="lazy" />
+              <img data-project="tdf" alt="Tour de France, série Prism Motion" loading="lazy" />
             </div>
             <div class="hero-slide-scrim"></div>
             <div class="project-carousel-content">
@@ -258,6 +258,20 @@
           </div>
 
         </div>
+
+        <script>
+(function() {
+  var CAROUSEL_POOLS = {cyclisme:["assets/photos/cyclisme/cyclisme-01.jpg","assets/photos/cyclisme/cyclisme-02.jpg","assets/photos/cyclisme/cyclisme-03.jpg","assets/photos/cyclisme/cyclisme-04.jpg","assets/photos/cyclisme/cyclisme-05.jpg","assets/photos/cyclisme/cyclisme-06.jpg","assets/photos/cyclisme/cyclisme-07.jpg","assets/photos/cyclisme/cyclisme-08.jpg","assets/photos/cyclisme/cyclisme-09.jpg","assets/photos/cyclisme/cyclisme-10.jpg","assets/photos/cyclisme/cyclisme-11.jpg","assets/photos/cyclisme/cyclisme-12.jpg","assets/photos/cyclisme/cyclisme-13.jpg","assets/photos/cyclisme/cyclisme-14.jpg","assets/photos/cyclisme/cyclisme-15.jpg","assets/photos/cyclisme/cyclisme-16.jpg"],tennis:["assets/photos/tennis/tennis-01.jpg","assets/photos/tennis/tennis-02.jpg","assets/photos/tennis/tennis-03.jpg","assets/photos/tennis/tennis-04.jpg","assets/photos/tennis/tennis-05.jpg","assets/photos/tennis/tennis-06.jpg","assets/photos/tennis/tennis-07.jpg","assets/photos/tennis/tennis-08.jpg","assets/photos/tennis/tennis-09.jpg","assets/photos/tennis/tennis-10.jpg","assets/photos/tennis/tennis-11.jpg","assets/photos/tennis/tennis-12.jpg","assets/photos/tennis/tennis-13.jpg","assets/photos/tennis/tennis-14.jpg","assets/photos/tennis/tennis-15.jpg","assets/photos/tennis/tennis-16.jpg","assets/photos/tennis/tennis-17.jpg"],bloc:["assets/photos/bloc/bloc-01.jpg","assets/photos/bloc/bloc-02.jpg","assets/photos/bloc/bloc-03.jpg","assets/photos/bloc/bloc-04.jpg","assets/photos/bloc/bloc-05.jpg","assets/photos/bloc/bloc-06.jpg","assets/photos/bloc/bloc-07.jpg","assets/photos/bloc/bloc-09.jpg","assets/photos/bloc/bloc-10.jpg","assets/photos/bloc/bloc-11.jpg","assets/photos/bloc/bloc-12.jpg"],kitesurf:["assets/photos/kitesurf/kite-01.jpg","assets/photos/kitesurf/kite-02.jpg","assets/photos/kitesurf/kite-03.jpg","assets/photos/kitesurf/kite-04.jpg","assets/photos/kitesurf/kite-05.jpg","assets/photos/kitesurf/kite-06.jpg","assets/photos/kitesurf/kite-07.jpg","assets/photos/kitesurf/kite-08.jpg"],musculation:["assets/photos/musculation/muscu-01.jpg","assets/photos/musculation/muscu-02.jpg","assets/photos/musculation/muscu-03.jpg","assets/photos/musculation/muscu-04.jpg","assets/photos/musculation/muscu-05.jpg","assets/photos/musculation/muscu-06.jpg","assets/photos/musculation/muscu-07.jpg","assets/photos/musculation/muscu-08.jpg","assets/photos/musculation/muscu-09.jpg","assets/photos/musculation/muscu-10.jpg","assets/photos/musculation/muscu-11.jpg","assets/photos/musculation/muscu-12.jpg","assets/photos/musculation/muscu-13.jpg","assets/photos/musculation/muscu-14.jpg","assets/photos/musculation/muscu-15.jpg","assets/photos/musculation/muscu-16.jpg","assets/photos/musculation/muscu-17.jpg"],hyrox:["assets/photos/hyrox/hyrox-01.jpg","assets/photos/hyrox/hyrox-02.jpg","assets/photos/hyrox/hyrox-03.jpg","assets/photos/hyrox/hyrox-04.jpg","assets/photos/hyrox/hyrox-05.jpg","assets/photos/hyrox/hyrox-06.jpg","assets/photos/hyrox/hyrox-07.jpg","assets/photos/hyrox/hyrox-08.jpg","assets/photos/hyrox/hyrox-09.jpg","assets/photos/hyrox/hyrox-10.jpg","assets/photos/hyrox/hyrox-11.jpg","assets/photos/hyrox/hyrox-12.jpg","assets/photos/hyrox/hyrox-13.jpg","assets/photos/hyrox/hyrox-14.jpg","assets/photos/hyrox/hyrox-15.jpg","assets/photos/hyrox/hyrox-16.jpg","assets/photos/hyrox/hyrox-17.jpg"],motos:["assets/photos/motos/moto-01.jpg","assets/photos/motos/moto-02.jpg","assets/photos/motos/moto-03.jpg","assets/photos/motos/moto-04.jpg","assets/photos/motos/moto-05.jpg","assets/photos/motos/moto-06.jpg","assets/photos/motos/moto-07.jpg","assets/photos/motos/moto-08.jpg","assets/photos/motos/moto-09.jpg","assets/photos/motos/moto-10.jpg","assets/photos/motos/moto-11.jpg"],tdf:["assets/photos/tdf/tdf-01.jpg","assets/photos/tdf/tdf-02.jpg","assets/photos/tdf/tdf-03.jpg","assets/photos/tdf/tdf-04.jpg","assets/photos/tdf/tdf-05.jpg","assets/photos/tdf/tdf-06.jpg","assets/photos/tdf/tdf-07.jpg","assets/photos/tdf/tdf-08.jpg","assets/photos/tdf/tdf-09.jpg","assets/photos/tdf/tdf-10.jpg","assets/photos/tdf/tdf-11.jpg","assets/photos/tdf/tdf-12.jpg","assets/photos/tdf/tdf-13.jpg","assets/photos/tdf/tdf-14.jpg","assets/photos/tdf/tdf-15.jpg","assets/photos/tdf/tdf-16.jpg","assets/photos/tdf/tdf-17.jpg"]};
+  var ALT = {cyclisme:"Cyclisme, série Prism Motion",tennis:"Tennis, série Prism Motion",bloc:"Escalade de bloc, série Prism Motion",kitesurf:"Kitesurf, série Prism Motion",musculation:"Musculation, série Prism Motion",hyrox:"Hyrox, série Prism Motion",motos:"Motos de collection, série Prism Motion",tdf:"Tour de France, série Prism Motion"};
+  document.querySelectorAll(".hero-slide-media img[data-project]").forEach(function(img) {
+    var key = img.getAttribute("data-project");
+    var pool = CAROUSEL_POOLS[key];
+    if (!pool || !pool.length) return;
+    img.src = pool[Math.floor(Math.random() * pool.length)];
+    img.alt = ALT[key] || img.alt;
+  });
+})();
+        </script>
 
         <div class="hero-carousel-dots" id="project-dots">
           <button class="hero-dot is-active" data-index="0" aria-label="Projet 1 : Cyclisme"></button>
@@ -282,41 +296,37 @@
         <h2 class="section-title">Ce que je couvre.</h2>
       </div>
 
-      <div class="bento reveal-group">
-        <div class="bento-item reveal">
-          <img src="assets/photos/cyclisme/cyclisme-10.jpg" alt="Coureurs cyclistes au départ d'une compétition" width="900" height="650" loading="lazy" />
-          <div class="bento-scrim"></div>
-          <div class="bento-text">
-            <h3 class="bento-title">Athlètes & collectifs</h3>
-            <p class="bento-desc">Individuel ou en équipe, à l'entraînement ou en compétition.</p>
+      <div class="coverage-grid reveal-group">
+        <div class="coverage-item reveal">
+          <div class="coverage-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
           </div>
+          <h3 class="coverage-title">Athlètes & collectifs</h3>
+          <p class="coverage-desc">Individuel ou en équipe, à l'entraînement ou en compétition.</p>
         </div>
 
-        <div class="bento-item reveal">
-          <img src="assets/photos/motos/moto-01.jpg" alt="Moto de collection Ducati en atelier" width="700" height="650" loading="lazy" />
-          <div class="bento-scrim"></div>
-          <div class="bento-text">
-            <h3 class="bento-title">Marques & placement produit</h3>
-            <p class="bento-desc">Contenu photo et vidéo pour vos campagnes.</p>
+        <div class="coverage-item reveal">
+          <div class="coverage-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>
           </div>
+          <h3 class="coverage-title">Marques & placement produit</h3>
+          <p class="coverage-desc">Contenu photo et vidéo pour vos campagnes.</p>
         </div>
 
-        <div class="bento-item reveal">
-          <img src="assets/photos/hyrox/hyrox-03.jpg" alt="Athlètes en plein effort lors d'une compétition Hyrox" width="700" height="650" loading="lazy" />
-          <div class="bento-scrim"></div>
-          <div class="bento-text">
-            <h3 class="bento-title">Créateurs & influenceurs sportifs</h3>
-            <p class="bento-desc">Suivi sur événements et entraînements pour alimenter vos réseaux.</p>
+        <div class="coverage-item reveal">
+          <div class="coverage-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4" /><path d="M3 8a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -8" /></svg>
           </div>
+          <h3 class="coverage-title">Créateurs & influenceurs sportifs</h3>
+          <p class="coverage-desc">Suivi sur événements et entraînements pour alimenter vos réseaux.</p>
         </div>
 
-        <div class="bento-item reveal">
-          <img src="assets/photos/bloc/bloc-05.jpg" alt="Compétition de bloc en salle avec public" width="900" height="650" loading="lazy" />
-          <div class="bento-scrim"></div>
-          <div class="bento-text">
-            <h3 class="bento-title">Sportifs amateurs</h3>
-            <p class="bento-desc">Vous vous lancez ? Construisons vos premiers visuels ensemble.</p>
+        <div class="coverage-item reveal">
+          <div class="coverage-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11" /></svg>
           </div>
+          <h3 class="coverage-title">Sportifs amateurs</h3>
+          <p class="coverage-desc">Vous vous lancez ? Construisons vos premiers visuels ensemble.</p>
         </div>
       </div>
     </div>

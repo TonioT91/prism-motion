@@ -96,6 +96,21 @@
       });
     });
 
+    const prevBtn = container.querySelector(".carousel-arrow--prev");
+    const nextBtn = container.querySelector(".carousel-arrow--next");
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        goToSlide(activeIndex - 1);
+        startAutoplay();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        goToSlide(activeIndex + 1);
+        startAutoplay();
+      });
+    }
+
     container.addEventListener("mouseenter", stopAutoplay);
     container.addEventListener("mouseleave", startAutoplay);
     container.addEventListener("focusin", stopAutoplay);

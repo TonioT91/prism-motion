@@ -750,6 +750,74 @@ button {
   color: var(--on-photo-text);
 }
 
+.carousel-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--on-photo-text);
+  text-decoration: none;
+}
+
+.carousel-cta .icon {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.carousel-cta:hover .icon {
+  transform: translateX(4px);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--on-photo-line);
+  color: var(--on-photo-text);
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+
+.carousel-arrow:hover {
+  background: rgba(10, 10, 10, 0.65);
+  border-color: var(--on-photo-text);
+}
+
+.carousel-arrow .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-arrow--prev {
+  left: 16px;
+}
+
+.carousel-arrow--next {
+  right: 16px;
+}
+
+@media (min-width: 768px) {
+  .carousel-arrow--prev { left: 24px; }
+  .carousel-arrow--next { right: 24px; }
+}
+
+@media (max-width: 639px) {
+  .carousel-arrow { display: none; }
+}
+
 .hero-eyebrow {
   display: block;
   font-family: var(--font-mono);

@@ -1531,6 +1531,62 @@ button {
 }
 
 /* =========================================================
+   Tarifs
+   ========================================================= */
+.pricing-table {
+  border-top: 1px solid var(--line);
+}
+
+.pricing-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pricing-label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.pricing-icon {
+  flex-shrink: 0;
+}
+
+.pricing-value {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.pricing-note {
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--text-faint);
+  max-width: 68ch;
+  line-height: 1.6;
+}
+
+.pricing-cta {
+  margin-top: 28px;
+}
+
+@media (min-width: 640px) {
+  .pricing-row { padding: 20px 0; }
+  .pricing-label { font-size: 16px; }
+  .pricing-value { font-size: 17px; }
+}
+
+/* =========================================================
    About
    ========================================================= */
 

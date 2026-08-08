@@ -1465,8 +1465,18 @@ button {
 @media (min-width: 1024px) {
   .work-grid {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
+    gap: 18px;
   }
+}
+
+@media (min-width: 1280px) {
+  .work-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.work-card-wrap {
+  position: relative;
 }
 
 .work-card {
@@ -1474,8 +1484,33 @@ button {
   display: block;
   border-radius: var(--radius-card);
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border: 1px solid var(--line);
+}
+
+.work-card-insta {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(10, 10, 12, 0.55);
+  backdrop-filter: blur(6px);
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.work-card-insta .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.work-card-insta:hover {
+  transform: scale(1.08);
 }
 
 .work-card img {
@@ -1504,7 +1539,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 24px;
+  padding: 16px;
   color: var(--on-photo-text);
 }
 
@@ -1519,8 +1554,9 @@ button {
 }
 
 .work-card-title {
-  font-size: 21px;
+  font-size: 16px;
   font-weight: 700;
+  line-height: 1.25;
 }
 
 .work-card-desc {

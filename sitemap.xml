@@ -48,4 +48,8 @@
     <loc>https://prism-motion.com/projets/tdf.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://prism-motion.com/projets/val.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>

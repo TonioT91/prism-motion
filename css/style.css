@@ -251,6 +251,7 @@ button {
   letter-spacing: 0.01em;
   white-space: nowrap;
   border: 1px solid transparent;
+  text-decoration: none;
   transition: transform var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
 }
 

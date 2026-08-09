@@ -673,6 +673,62 @@ button {
   margin-top: 40px;
 }
 
+.projets-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.projets-cta-link-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.projets-cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  overflow: hidden;
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+
+.projets-cta-arrow .icon {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.projets-cta-link:hover .projets-cta-arrow {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.projets-cta-link:hover .projets-cta-arrow .icon {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.projets-cta-arrow .icon + .icon {
+  margin-left: -20px;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.projets-cta-link:hover .projets-cta-arrow .icon + .icon {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .hero-slide {
   position: absolute;
   inset: 0;

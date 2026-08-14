@@ -165,13 +165,13 @@
 
           <div class="hero-slide" data-index="1">
             <div class="hero-slide-media">
-              <img data-project="plongee" alt="Plongée, série Prism Motion" loading="lazy" />
+              <img data-project="val" alt="Val, série Prism Motion" loading="lazy" />
             </div>
             <div class="hero-slide-scrim"></div>
             <div class="project-carousel-content">
-              <span class="project-cat">Abyss — Plongée Nouméa</span>
-              <p class="project-carousel-desc">Préparation, immersion et retour en mer, en Nouvelle-Calédonie.</p>
-              <a href="projets/plongee.html" class="carousel-cta">Voir le projet <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg></a>
+              <span class="project-cat">Athlète individuel</span>
+              <p class="project-carousel-desc">Suivi d'entraînement et portraits, en salle de musculation et de crossfit.</p>
+              <a href="projets/val.html" class="carousel-cta">Voir le projet <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg></a>
             </div>
           </div>
 
@@ -191,8 +191,8 @@
 
         <script>
 (function() {
-  var CAROUSEL_POOLS = {tdf:["assets/photos/tdf/tdf-01.jpg","assets/photos/tdf/tdf-02.jpg","assets/photos/tdf/tdf-03.jpg","assets/photos/tdf/tdf-04.jpg","assets/photos/tdf/tdf-05.jpg","assets/photos/tdf/tdf-06.jpg","assets/photos/tdf/tdf-07.jpg","assets/photos/tdf/tdf-08.jpg","assets/photos/tdf/tdf-09.jpg","assets/photos/tdf/tdf-10.jpg","assets/photos/tdf/tdf-11.jpg","assets/photos/tdf/tdf-12.jpg","assets/photos/tdf/tdf-13.jpg","assets/photos/tdf/tdf-14.jpg","assets/photos/tdf/tdf-15.jpg","assets/photos/tdf/tdf-16.jpg","assets/photos/tdf/tdf-17.jpg"],plongee:["assets/photos/plongee/plongee-01.jpg","assets/photos/plongee/plongee-02.jpg","assets/photos/plongee/plongee-03.jpg","assets/photos/plongee/plongee-04.jpg","assets/photos/plongee/plongee-05.jpg","assets/photos/plongee/plongee-06.jpg","assets/photos/plongee/plongee-07.jpg","assets/photos/plongee/plongee-08.jpg","assets/photos/plongee/plongee-09.jpg"],hockey:["assets/photos/hockey/hockey-01.jpg","assets/photos/hockey/hockey-02.jpg","assets/photos/hockey/hockey-03.jpg","assets/photos/hockey/hockey-04.jpg","assets/photos/hockey/hockey-05.jpg","assets/photos/hockey/hockey-06.jpg","assets/photos/hockey/hockey-07.jpg","assets/photos/hockey/hockey-08.jpg","assets/photos/hockey/hockey-09.jpg","assets/photos/hockey/hockey-10.jpg","assets/photos/hockey/hockey-11.jpg","assets/photos/hockey/hockey-12.jpg","assets/photos/hockey/hockey-13.jpg","assets/photos/hockey/hockey-14.jpg","assets/photos/hockey/hockey-15.jpg","assets/photos/hockey/hockey-16.jpg","assets/photos/hockey/hockey-17.jpg","assets/photos/hockey/hockey-18.jpg","assets/photos/hockey/hockey-19.jpg","assets/photos/hockey/hockey-20.jpg"]};
-  var ALT = {tdf:"Tour de France, série Prism Motion",plongee:"Plongée, série Prism Motion",hockey:"Hockey, série Prism Motion"};
+  var CAROUSEL_POOLS = {tdf:["assets/photos/tdf/tdf-01.jpg","assets/photos/tdf/tdf-02.jpg","assets/photos/tdf/tdf-03.jpg","assets/photos/tdf/tdf-04.jpg","assets/photos/tdf/tdf-05.jpg","assets/photos/tdf/tdf-06.jpg","assets/photos/tdf/tdf-07.jpg","assets/photos/tdf/tdf-08.jpg","assets/photos/tdf/tdf-09.jpg","assets/photos/tdf/tdf-10.jpg","assets/photos/tdf/tdf-11.jpg","assets/photos/tdf/tdf-12.jpg","assets/photos/tdf/tdf-13.jpg","assets/photos/tdf/tdf-14.jpg","assets/photos/tdf/tdf-15.jpg","assets/photos/tdf/tdf-16.jpg","assets/photos/tdf/tdf-17.jpg"],val:["assets/photos/val/val-01.jpg","assets/photos/val/val-02.jpg","assets/photos/val/val-03.jpg","assets/photos/val/val-04.jpg","assets/photos/val/val-05.jpg","assets/photos/val/val-06.jpg","assets/photos/val/val-07.jpg","assets/photos/val/val-08.jpg","assets/photos/val/val-09.jpg","assets/photos/val/val-10.jpg","assets/photos/val/val-11.jpg","assets/photos/val/val-12.jpg","assets/photos/val/val-13.jpg"],hockey:["assets/photos/hockey/hockey-01.jpg","assets/photos/hockey/hockey-02.jpg","assets/photos/hockey/hockey-03.jpg","assets/photos/hockey/hockey-04.jpg","assets/photos/hockey/hockey-05.jpg","assets/photos/hockey/hockey-06.jpg","assets/photos/hockey/hockey-07.jpg","assets/photos/hockey/hockey-08.jpg","assets/photos/hockey/hockey-09.jpg","assets/photos/hockey/hockey-10.jpg","assets/photos/hockey/hockey-11.jpg","assets/photos/hockey/hockey-12.jpg","assets/photos/hockey/hockey-13.jpg","assets/photos/hockey/hockey-14.jpg","assets/photos/hockey/hockey-15.jpg","assets/photos/hockey/hockey-16.jpg","assets/photos/hockey/hockey-17.jpg","assets/photos/hockey/hockey-18.jpg","assets/photos/hockey/hockey-19.jpg","assets/photos/hockey/hockey-20.jpg"]};
+  var ALT = {tdf:"Tour de France, série Prism Motion",val:"Val, série Prism Motion",hockey:"Hockey, série Prism Motion"};
   document.querySelectorAll(".hero-slide-media img[data-project]").forEach(function(img) {
     var key = img.getAttribute("data-project");
     var pool = CAROUSEL_POOLS[key];
@@ -212,7 +212,7 @@
 
         <div class="hero-carousel-dots" id="project-dots">
           <button class="hero-dot is-active" data-index="0" aria-label="Projet 1 : Les Ours de Villard-de-Lans"></button>
-          <button class="hero-dot" data-index="1" aria-label="Projet 2 : Abyss plongée Nouméa"></button>
+          <button class="hero-dot" data-index="1" aria-label="Projet 2 : Val"></button>
           <button class="hero-dot" data-index="2" aria-label="Projet 3 : Tour de France"></button>
         </div>
       </div>

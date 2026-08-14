@@ -660,9 +660,9 @@ button {
 .project-carousel {
   position: relative;
   margin-top: 40px;
-  height: 58vh;
-  min-height: 380px;
-  max-height: 560px;
+  height: 78vh;
+  min-height: 480px;
+  max-height: 760px;
   border-radius: var(--radius-card);
   overflow: hidden;
   border: 1px solid var(--line);
@@ -753,7 +753,7 @@ button {
 .hero-slide-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .hero-slide-scrim {
